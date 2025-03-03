@@ -92,7 +92,6 @@ namespace Microsoft.PowerToys.UITest
         /// <returns>full temp file path</returns>
         private static string GetTempFilePath(string scenario, string imageType, string extension)
         {
-            string tempFileFullName = string.Join(string.Empty, scenario, "_", imageType, "_", Guid.NewGuid().ToString(), extension);
 
             // Remove invalid filename character if any
             Path.GetInvalidFileNameChars().ToList().ForEach(c => tempFileFullName = tempFileFullName.Replace(c, '-'));
