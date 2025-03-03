@@ -40,6 +40,8 @@ namespace Hosts.UITests
             // 'Add an entry' button (only show-up when list is empty) should be visible
             Assert.IsTrue(this.FindAll<HyperlinkButton>("Add an entry").Count == 1, "'Add an entry' button should be visible in the empty view");
 
+            VisualAssert.AreEqual(this.Find("Entries"), "RenderEmptyView");
+
             // Click 'Add an entry' from empty-view for adding Host override rule
             this.Find<HyperlinkButton>("Add an entry").Click();
 
@@ -69,6 +71,8 @@ namespace Hosts.UITests
             this.AddEntry("192.168.0.1", "localhost", true);
 
             Assert.IsTrue(this.FindAll<Button>("Delete").Count == 1, "Should have one row now");
+
+            VisualAssert.AreEqual(this.Find("Entries"), "RenderEntryList");
         }
 
         /// <summary>

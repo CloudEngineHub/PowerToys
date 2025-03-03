@@ -269,6 +269,12 @@ namespace Microsoft.PowerToys.UITest
             return this.FindAll<Element>(By.Name(name), timeoutMS);
         }
 
+        internal void SaveToPngFile(string path)
+        {
+            Assert.IsNotNull(this.windowsElement, $"WindowsElement is null in method SaveToFile with parameter: path = {path}");
+            this.windowsElement.GetScreenshot().SaveAsFile(path);
+        }
+
         /// <summary>
         /// Simulates a manual operation on the element.
         /// </summary>
