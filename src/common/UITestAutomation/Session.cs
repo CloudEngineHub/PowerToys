@@ -4,7 +4,6 @@
 
 using System.Collections.ObjectModel;
 using System.Runtime.InteropServices;
-using System.Xml.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
@@ -18,7 +17,7 @@ namespace Microsoft.PowerToys.UITest
     {
         private WindowsDriver<WindowsElement> Root { get; set; }
 
-        private WindowsDriver<WindowsElement> WindowsDriver { get; set; }
+        internal WindowsDriver<WindowsElement> WindowsDriver { get; set; }
 
         [DllImport("user32.dll")]
         private static extern bool SetForegroundWindow(nint hWnd);
